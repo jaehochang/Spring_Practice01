@@ -4,11 +4,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class NavController {
+public class MainController {
 
-	@RequestMapping("home.do")
+	@RequestMapping("/home.mo")
 	public String toHome() {
-		return "redirect:index.jsp";
+		return "redirect:main.jsp";
 	}
+
+	
 	
 }

@@ -31,7 +31,6 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public Boolean loginCheck(MemberDTO dto) {
-		
 		return dao.loginCheck(dto);
 	}
 	
