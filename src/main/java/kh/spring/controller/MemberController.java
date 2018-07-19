@@ -1,5 +1,7 @@
 package kh.spring.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +12,10 @@ import kh.spring.interfaces.MemberService;
 
 @Controller
 public class MemberController {
+
+	@Autowired
+	private MemberService service;
+
 	@RequestMapping("/index.do")
 	public String toIndex() {
 		return "redirect:index.jsp";
@@ -18,6 +24,11 @@ public class MemberController {
 	@RequestMapping("/sign.do")
 	public String toSign() {
 		return "redirect:sign.jsp";
+	}
+
+	@RequestMapping("/login.do")
+	public String toLogin() {
+		return "redirect:login.jsp";
 	}
 
 	@RequestMapping("/signProc.do")
@@ -29,8 +40,22 @@ public class MemberController {
 		return mav;
 	}
 
-	@Autowired
-	private MemberService service;
+	@RequestMapping("/loginProc.do")
+	public ModelAndView toLoginProc(MemberDTO dto, HttpSession session) {
+		ModelAndView mav = new ModelAndView();
+
+		Boolean result = service.loginCheck(dto);
+
+		if (result == true) {
+			session.setAttribute("userID", dto.getEmail());
+			System.out.println(session.getAttribute("userID"));
+			mav.setViewName("main.jsp");
+			return mav;
+		} else {
+			mav.setViewName("sign.do");
+			return mav;
+		}
+	}
 
 	@RequestMapping("/main.do")
 	public String toMain() {
@@ -38,18 +63,4 @@ public class MemberController {
 
 	}
 
-	@RequestMapping("/loginProc.do")
-	public ModelAndView toLoginProc(MemberDTO dto) {
-		ModelAndView mav = new ModelAndView();
-
-		Boolean result = service.loginCheck(dto);
-		if (result == true) {
-			mav.setViewName("main.jsp");
-			return mav;
-		} else {
-			mav.setViewName("signup.jsp");
-			return mav;
-		}
-
-	}
 }

@@ -29,14 +29,14 @@
 						class="icon-bar"></span>
 				</button>
 
-				<a class="navbar-brand" href="main.jsp">Awesome Masterpiece</a>
+				<a class="navbar-brand" href="home.mo">Awesome Masterpiece</a>
 			</div>
 
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="main.jsp">Main</a></li>
-					<!-- <li><a href="board.jsp">Board</a></li> -->
+					<li class="active"><a href="home.mo">Main</a></li>
+					<li><a href="board.bo">Board</a></li>
 				</ul>
 
 

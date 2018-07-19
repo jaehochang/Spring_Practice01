@@ -1,6 +1,5 @@
 package kh.spring.controller;
 
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,10 +15,6 @@ public class BoardController {
 	@Autowired
 	public BoardService bService;
 
-	@RequestMapping("/home.bo")
-	public String toHome() {
-		return "redirect:index.jsp";
-	}
 
 	@RequestMapping("/board.bo")
 	public String toBoard() {
