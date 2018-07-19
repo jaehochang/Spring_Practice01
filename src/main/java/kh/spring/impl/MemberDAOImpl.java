@@ -20,7 +20,7 @@ public class MemberDAOImpl implements MemberDAO {
 	
 	@Override
 	public int insertMember(MemberDTO dto) {
-		String sql = "insert into member values(member.nextval,?,?,?) ";
+		String sql = "insert into member values(member_seq.nextval,?,?,?) ";
 		//signup.jsp
 		return template.update(sql,dto.getEmail(),dto.getPw(),dto.getNickname());
 	}
@@ -44,18 +44,6 @@ public class MemberDAOImpl implements MemberDAO {
 			
 		});
 	}
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
-
-import kh.spring.dto.MemberDTO;
-import kh.spring.interfaces.MemberDAO;
-
-public class MemberDAOImpl implements MemberDAO{
-
-	@Autowired
-	private JdbcTemplate template; 
 	
 	@Override
 	public Boolean loginCheck(MemberDTO dto) {

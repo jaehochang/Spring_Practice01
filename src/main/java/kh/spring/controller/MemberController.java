@@ -20,6 +20,12 @@ public class MemberController {
 		return "redirect:sign.jsp";
 	}
 	
+	@RequestMapping("/login.do")
+	public String toLogin() {
+		return "redirect:login.jsp";
+	}
+	
+	
 	@RequestMapping("/signProc.do")
 	public ModelAndView signProc(MemberDTO dto) {
 		ModelAndView mav = new ModelAndView();
