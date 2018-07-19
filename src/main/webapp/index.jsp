@@ -14,7 +14,7 @@
 	integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
 	crossorigin="anonymous">
 
-<title>Hello, world!</title>
+<title>Home</title>
 </head>
 <body>
 
@@ -35,7 +35,7 @@
 						<li class="nav-item active"><a class="nav-link"
 							href="home.do">Home <span class="sr-only">(current)</span>
 						</a></li>
-						<li class="nav-item"><a class="nav-link" href="board.do">Board</a></li>
+						<li class="nav-item"><a class="nav-link" href="board.bo">Board</a></li>
 					</ul>
 					<form class="form-inline my-2 my-lg-0">
 						<input class="form-control mr-sm-2" type="search"

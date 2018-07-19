@@ -6,10 +6,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class BoardController {
 
-	@RequestMapping("/board.do")
+	@RequestMapping("/board.bo")
 	public String toBoard() {
 	
 		return "redirect:board.jsp";
 	}
 
+	
 }
