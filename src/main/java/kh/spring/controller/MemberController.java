@@ -1,5 +1,7 @@
 package kh.spring.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,12 +41,14 @@ public String toMain() {
 }
 
 @RequestMapping("/loginProc.do")
-public ModelAndView toLoginProc(MemberDTO dto) {
+public ModelAndView toLoginProc(MemberDTO dto,HttpSession session) {
 	ModelAndView mav=new ModelAndView();
 	
 	Boolean result=service.loginCheck(dto);
 	System.out.println("컨트롤러 : "+result);
 	if(result==true) {
+		session.setAttribute("userID", dto.getEmail());
+		System.out.println(session.getAttribute("userID"));
 		mav.setViewName("main.jsp");
 		return mav;
 	}else {

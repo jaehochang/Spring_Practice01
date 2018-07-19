@@ -46,10 +46,10 @@ public class MemberDAOImpl implements MemberDAO {
 	@Override
 	public Boolean loginCheck(MemberDTO dto) {
 		String sql = "select count(*) from member where email=? and pw=?";
-		boolean result=false;
-		int count=template.queryForObject(sql, new Object[] {dto.getEmail(),dto.getPw()}, Integer.class);
-		if(count>0) {
-			result=true;
+		boolean result = false;
+		int count = template.queryForObject(sql, new Object[] { dto.getEmail(), dto.getPw() }, Integer.class);
+		if (count > 0) {
+			result = true;
 		}
 		return result;
 
