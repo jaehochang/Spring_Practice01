@@ -168,23 +168,27 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<div class="modal-body">
-					<form>
+				<form action="writing.bo" method=get>
+					<div class="modal-body">
 						<div class="form-group">
-							<label for="recipient-name" class="col-form-label">글 제목</label>
-							<input type="text" class="form-control" id="recipient-name">
+							<label for="recipient-name" class="col-form-label">글 제목</label> <input
+								type="text" name="title" class="form-control"
+								id="recipient-name">
 						</div>
 						<div class="form-group">
 							<label for="message-text" class="col-form-label">글 내용</label>
-							<textarea class="form-control" id="message-text"></textarea>
+							<textarea class="form-control" id="message-text" name="contents"></textarea>
+							<input type="hidden" name="writer"
+								value="${sessionScope.loginId}">
 						</div>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary"
-						data-dismiss="modal">닫기</button>
-					<button type="button" class="btn btn-primary">쓰기</button>
-				</div>
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">닫기</button>
+						<button type="submit" class="btn btn-primary">쓰기</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

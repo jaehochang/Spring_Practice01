@@ -26,11 +26,6 @@ public class MemberServiceImpl implements MemberService {
 		
 		return dao.selectMember();
 	}
-
-	@Override
-	public Boolean loginCheck(MemberDTO dto) {
-		return dao.loginCheck(dto);
-	}
 	
 	@Override
 	public Boolean loginCheck(MemberDTO dto) {
