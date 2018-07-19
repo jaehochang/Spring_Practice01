@@ -15,10 +15,6 @@ public class BoardController {
 	@Autowired
 	public BoardService bService;
 
-	@RequestMapping("/home.bo")
-	public String toHome() {
-		return "redirect:index.jsp";
-	}
 
 	@RequestMapping("/board.bo")
 	public String toBoard() {
