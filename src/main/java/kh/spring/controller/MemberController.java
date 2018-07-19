@@ -10,6 +10,25 @@ import kh.spring.interfaces.MemberService;
 
 @Controller
 public class MemberController {
+	@RequestMapping("/index.do")
+	public String toIndex() {
+		return "redirect:index.jsp";
+	}
+	
+	@RequestMapping("/sign.do")
+	public String toSign() {
+		return "redirect:sign.jsp";
+	}
+	
+	@RequestMapping("/signProc.do")
+	public ModelAndView signProc(MemberDTO dto) {
+		ModelAndView mav = new ModelAndView();
+		int result = service.insertMember(dto);
+		mav.addObject("result", result);
+		mav.setViewName("signProc.jsp");
+		return mav;
+	}
+	
 @Autowired
 private MemberService service;
 
