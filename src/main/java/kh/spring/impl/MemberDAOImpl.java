@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
 
 import kh.spring.dto.MemberDTO;
 import kh.spring.interfaces.MemberDAO;
@@ -15,8 +16,7 @@ import kh.spring.interfaces.MemberDAO;
 @Component
 public class MemberDAOImpl implements MemberDAO{
 
-	@Autowired
-	private JdbcTemplate template; 
+
 	
 	@Autowired
 	private JdbcTemplate template;
@@ -62,7 +62,7 @@ public class MemberDAOImpl implements MemberDAO{
 
 			}
 
-		}, dto.getPw(), dto.getEmail());
+		}, dto.getEmail(), dto.getPw());
 
 		if (result.size() > 0) {
 			return true;
@@ -72,16 +72,6 @@ public class MemberDAOImpl implements MemberDAO{
 
 	}
 
-	@Override
-	public int insertMember(MemberDTO dto) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
-	@Override
-	public List<MemberDTO> selectMember() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }
