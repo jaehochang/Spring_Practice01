@@ -10,4 +10,8 @@ public interface MemberDAO {
 	public List<MemberDTO> selectMember();
 
 	public Boolean loginCheck(MemberDTO dto);
+	
+	public int deleteMember(int seq);
+	
+	public int modifyMember(MemberDTO dto , int seq);
 }

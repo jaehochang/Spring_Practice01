@@ -34,6 +34,18 @@ public class MemberServiceImpl implements MemberService {
 		
 		return dao.loginCheck(dto);
 	}
+
+	@Override
+	public int deleteMember(int seq) {
+		
+		return dao.deleteMember(seq);
+	}
+
+	@Override
+	public int modifyMember(MemberDTO dto, int seq) {
+		
+		return dao.modifyMember(dto, seq);
+	}
 	
 
 	
