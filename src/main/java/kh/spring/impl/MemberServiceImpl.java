@@ -20,6 +20,7 @@ public class MemberServiceImpl implements MemberService {
 	public int insertMember(MemberDTO dto) {
 		
 		return dao.insertMember(dto);
+		
 	}
 
 	@Override
@@ -33,11 +34,6 @@ public class MemberServiceImpl implements MemberService {
 		return dao.loginCheck(dto);
 	}
 	
-	@Override
-	public Boolean loginCheck(MemberDTO dto) {
-		
-		return dao.loginCheck(dto);
-	}
-	
+
 	
 }

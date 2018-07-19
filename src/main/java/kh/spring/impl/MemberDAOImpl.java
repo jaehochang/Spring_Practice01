@@ -23,7 +23,7 @@ public class MemberDAOImpl implements MemberDAO{
 
 	@Override
 	public int insertMember(MemberDTO dto) {
-		String sql = "insert into member values(member_seq.nextval,?,?,?) ";
+		String sql = "insert into member values(members_seq.nextval,?,?,?) ";
 		//signup.jsp
 		return template.update(sql,dto.getEmail(),dto.getPw(),dto.getNickname());
 	}
