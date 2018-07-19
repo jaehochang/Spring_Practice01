@@ -42,7 +42,7 @@
 
 			<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-					<li class="nav-item active"><a class="nav-link" href="home.do">Home
+					<li class="nav-item active"><a class="nav-link" href="home.bo">Home
 							<span class="sr-only">(current)</span>
 					</a></li>
 					<li class="nav-item"><a class="nav-link" href="board.bo">Board</a></li>
