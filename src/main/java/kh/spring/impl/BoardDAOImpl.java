@@ -5,9 +5,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 import kh.spring.dto.BoardDTO;
+import kh.spring.interfaces.BoardDAO;
 
 @Component
-public class BoardDAOImpl {
+public class BoardDAOImpl implements BoardDAO{
 
 	@Autowired
 	public JdbcTemplate template;
