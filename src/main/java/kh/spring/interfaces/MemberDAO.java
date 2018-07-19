@@ -1,5 +1,7 @@
 package kh.spring.interfaces;
 
-public interface MemberDAO {
+import kh.spring.dto.MemberDTO;
 
+public interface MemberDAO {
+public Boolean loginCheck(MemberDTO dto);
 }
