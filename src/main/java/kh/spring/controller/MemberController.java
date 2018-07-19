@@ -69,9 +69,21 @@ public class MemberController {
 		return "redirect:delete.jsp";
 	}
 	
-	@RequestMapping("/delete.do")
+	@RequestMapping("/update.do")
 	public String toUpdate() {
 		return "redirect:update.jsp";
+	}
+	
+	@RequestMapping("/deleteProc.do")
+	public ModelAndView toDeleteProc() {
+		
+		return null;
+	}
+	
+	@RequestMapping("/updateProc.do")
+	public ModelAndView toUpdateProc() {
+		
+		return null;
 	}
 	
 }
