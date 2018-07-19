@@ -63,25 +63,6 @@ public class MemberController {
 		return "redirect:main.jsp";
 
 	}
-
-
-	@RequestMapping("/loginProc.do")
-	public ModelAndView toLoginProc(MemberDTO dto,HttpSession session) {
-		ModelAndView mav=new ModelAndView();
-
-		Boolean result=service.loginCheck(dto);
-
-		if(result==true) {
-			session.setAttribute("userID", dto.getEmail());
-			System.out.println(session.getAttribute("userID"));
-			mav.setViewName("main.jsp");
-			return mav;
-		}else {
-			mav.setViewName("sign.do");
-			return mav;
-		}
-
-	}
 	
 	@RequestMapping("/delete.do")
 	public String toDelete() {
