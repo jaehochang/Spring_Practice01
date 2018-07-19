@@ -39,6 +39,7 @@ public class MemberDAOImpl implements MemberDAO {
 				mdto.setPw(rs.getString(3));
 				mdto.setNickname(rs.getString(4));
 				return mdto;
+				
 			}
 			
 		});
