@@ -1,5 +1,10 @@
 package kh.spring.interfaces;
 
-public interface MemberService {
+import java.util.List;
 
+import kh.spring.dto.MemberDTO;
+
+public interface MemberService {
+	public int insertMember(MemberDTO dto);
+	public List<MemberDTO> selectMember();
 }
