@@ -50,25 +50,13 @@ public class MemberDAOImpl implements MemberDAO{
 
 	@Override
 	public Boolean loginCheck(MemberDTO dto) {
-		String sql = "select email,pw from member where email=? and pw=?";
-		List<MemberDTO> result = template.query(sql, new RowMapper<MemberDTO>() {
-
-			@Override
-			public MemberDTO mapRow(ResultSet rs, int rowNum) throws SQLException {
-				MemberDTO dto = new MemberDTO();
-				dto.setEmail(rs.getString("email"));
-				dto.setPw(rs.getString("pw"));
-				return dto;
-
-			}
-
-		}, dto.getEmail(), dto.getPw());
-
-		if (result.size() > 0) {
-			return true;
-		} else {
-			return false;
+		String sql = "select count(*) from member where email=? and pw=?";
+		boolean result=false;
+		int count=template.queryForObject(sql, new Object[] {dto.getEmail(),dto.getPw()}, Integer.class);
+		if(count>0) {
+			result=true;
 		}
+		return result;
 
 	}
 
