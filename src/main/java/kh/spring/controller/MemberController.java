@@ -12,6 +12,10 @@ import kh.spring.interfaces.MemberService;
 
 @Controller
 public class MemberController {
+
+	@Autowired
+	private MemberService service;
+
 	@RequestMapping("/index.do")
 	public String toIndex() {
 		return "redirect:index.jsp";
@@ -21,17 +25,12 @@ public class MemberController {
 	public String toSign() {
 		return "redirect:sign.jsp";
 	}
-<<<<<<< HEAD
-	
+
 	@RequestMapping("/login.do")
 	public String toLogin() {
 		return "redirect:login.jsp";
 	}
-	
-	
-=======
 
->>>>>>> Branch-SeungJin
 	@RequestMapping("/signProc.do")
 	public ModelAndView signProc(MemberDTO dto) {
 		ModelAndView mav = new ModelAndView();
@@ -41,24 +40,22 @@ public class MemberController {
 		return mav;
 	}
 
-<<<<<<< HEAD
-@RequestMapping("/loginProc.do")
-public ModelAndView toLoginProc(MemberDTO dto,HttpSession session) {
-	ModelAndView mav=new ModelAndView();
-	
-	Boolean result=service.loginCheck(dto);
+	@RequestMapping("/loginProc.do")
+	public ModelAndView toLoginProc(MemberDTO dto, HttpSession session) {
+		ModelAndView mav = new ModelAndView();
 
-	if(result==true) {
-		session.setAttribute("userID", dto.getEmail());
-		System.out.println(session.getAttribute("userID"));
-		mav.setViewName("main.jsp");
-		return mav;
-	}else {
-		mav.setViewName("sign.do");
-		return mav;
-=======
-	@Autowired
-	private MemberService service;
+		Boolean result = service.loginCheck(dto);
+
+		if (result == true) {
+			session.setAttribute("userID", dto.getEmail());
+			System.out.println(session.getAttribute("userID"));
+			mav.setViewName("main.jsp");
+			return mav;
+		} else {
+			mav.setViewName("sign.do");
+			return mav;
+		}
+	}
 
 	@RequestMapping("/main.do")
 	public String toMain() {
@@ -66,19 +63,4 @@ public ModelAndView toLoginProc(MemberDTO dto,HttpSession session) {
 
 	}
 
-	@RequestMapping("/loginProc.do")
-	public ModelAndView toLoginProc(MemberDTO dto) {
-		ModelAndView mav = new ModelAndView();
-
-		Boolean result = service.loginCheck(dto);
-		if (result == true) {
-			mav.setViewName("main.jsp");
-			return mav;
-		} else {
-			mav.setViewName("signup.jsp");
-			return mav;
-		}
-
->>>>>>> Branch-SeungJin
-	}
 }

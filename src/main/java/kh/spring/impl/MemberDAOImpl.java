@@ -12,12 +12,6 @@ import org.springframework.stereotype.Component;
 import kh.spring.dto.MemberDTO;
 import kh.spring.interfaces.MemberDAO;
 
-<<<<<<< HEAD
-=======
-@Component
-public class MemberDAOImpl implements MemberDAO {
->>>>>>> Branch-SeungJin
-
 @Component
 public class MemberDAOImpl implements MemberDAO{
 
