@@ -7,7 +7,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.stereotype.Component;
 
 import kh.spring.dto.MemberDTO;
 import kh.spring.interfaces.MemberDAO;
@@ -19,28 +18,58 @@ public class MemberDAOImpl implements MemberDAO{
 	@Autowired
 	private JdbcTemplate template; 
 	
+	@Autowired
+	private JdbcTemplate template;
+
+	@Override
+	public int insertMember(MemberDTO dto) {
+		String sql = "insert into member values(member.nextval,?,?,?) ";
+		// signup.jsp
+		return template.update(sql, dto.getEmail(), dto.getPw(), dto.getNickname());
+	}
+
+	@Override
+	public List<MemberDTO> selectMember() {
+		String sql = "select * from member ";
+		return template.query(sql, new RowMapper<MemberDTO>() {
+
+			@Override
+			public MemberDTO mapRow(ResultSet rs, int nownum) throws SQLException {
+
+				MemberDTO mdto = new MemberDTO();
+				mdto.setSeq(rs.getInt(1));
+				mdto.setEmail(rs.getString(2));
+				mdto.setPw(rs.getString(3));
+				mdto.setNickname(rs.getString(4));
+				return mdto;
+
+			}
+
+		});
+	}
+
 	@Override
 	public Boolean loginCheck(MemberDTO dto) {
-		String sql="select email,pw from member where email=? and pw=?";
-		List<MemberDTO> result=template.query(sql,  new RowMapper<MemberDTO>() {
+		String sql = "select email,pw from member where email=? and pw=?";
+		List<MemberDTO> result = template.query(sql, new RowMapper<MemberDTO>() {
 
 			@Override
 			public MemberDTO mapRow(ResultSet rs, int rowNum) throws SQLException {
-				MemberDTO dto= new MemberDTO();
+				MemberDTO dto = new MemberDTO();
 				dto.setEmail(rs.getString("email"));
 				dto.setPw(rs.getString("pw"));
 				return dto;
-				
+
 			}
-			
-		},dto.getPw(),dto.getEmail());
-		
-		if(result.size()>0) {
+
+		}, dto.getPw(), dto.getEmail());
+
+		if (result.size() > 0) {
 			return true;
-		}else {
+		} else {
 			return false;
 		}
-		
+
 	}
 
 	@Override
