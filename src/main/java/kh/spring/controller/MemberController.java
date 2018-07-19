@@ -1,5 +1,7 @@
 package kh.spring.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,22 +14,25 @@ import kh.spring.interfaces.MemberService;
 
 @Controller
 public class MemberController {
+
+	@Autowired
+	private MemberService service;
+
 	@RequestMapping("/index.do")
 	public String toIndex() {
 		return "redirect:index.jsp";
 	}
-	
+
 	@RequestMapping("/sign.do")
 	public String toSign() {
 		return "redirect:sign.jsp";
 	}
-	
+
 	@RequestMapping("/login.do")
 	public String toLogin() {
 		return "redirect:login.jsp";
 	}
-	
-	
+
 	@RequestMapping("/signProc.do")
 	public ModelAndView signProc(MemberDTO dto) {
 		ModelAndView mav = new ModelAndView();
@@ -36,33 +41,43 @@ public class MemberController {
 		mav.setViewName("signProc.jsp");
 		return mav;
 	}
-	
-@Autowired
-private MemberService service;
 
-@RequestMapping("/main.do")
-public String toMain() {
-	return "redirect:main.jsp";
-	
-}
+	@RequestMapping("/main.do")
+	public String toMain() {
+		return "redirect:main.jsp";
 
-@RequestMapping("/loginProc.do")
-public ModelAndView toLoginProc(MemberDTO dto,HttpSession session) {
-	ModelAndView mav=new ModelAndView();
-	
-	Boolean result=service.loginCheck(dto);
-
-	if(result==true) {
-		session.setAttribute("userID", dto.getEmail());
-		System.out.println(session.getAttribute("userID"));
-		mav.setViewName("main.jsp");
-		return mav;
-	}else {
-		mav.setViewName("sign.do");
-		return mav;
 	}
-	
-	
-	
-}
+
+	@RequestMapping("/loginProc.do")
+	public ModelAndView toLoginProc(MemberDTO dto, HttpSession session) {
+		ModelAndView mav = new ModelAndView();
+
+		Boolean result = service.loginCheck(dto);
+
+		if (result == true) {
+			session.setAttribute("userID", dto.getEmail());
+			System.out.println(session.getAttribute("userID") + "loginproc");
+			mav.setViewName("main.jsp");
+			return mav;
+		} else {
+			mav.setViewName("sign.do");
+			return mav;
+		}
+
+	}
+	@RequestMapping("/mypage.do")
+	public ModelAndView toMypage(String email) {
+		
+		System.out.println(email + "mypage");
+		ModelAndView mav = new ModelAndView();
+		
+		List<MemberDTO> result = service.selectMypage(email);
+		
+		mav.addObject("result", result); 
+		mav.setViewName("mypage.jsp");
+		
+		return mav;
+		
+		
+	}
 }

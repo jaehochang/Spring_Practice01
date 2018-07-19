@@ -10,4 +10,5 @@ public interface MemberDAO {
 	public List<MemberDTO> selectMember();
 
 	public Boolean loginCheck(MemberDTO dto);
+	public List<MemberDTO> selectMypage(String email);
 }

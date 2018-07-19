@@ -86,6 +86,27 @@ public class MemberDAOImpl implements MemberDAO{
 	
 	}
 
+	@Override
+	public List<MemberDTO> selectMypage(String email) {
+		
+		System.out.println(email + "memberDAOImpl");
+		String sql = "select email from member where email=?";
+		
+		List<MemberDTO> result = template.queryForObject(sql, new Object[] {email}, List.class);
+		
+		System.out.println(result.size());
+		if(result.size() > 0) {
+			
+			System.out.println("불러오기 성공");
+		return result;
+		
+		}else {
+			System.out.println("불러오기 실패");
+			return result;
+		}
+		
+	}
+
 
 
 }

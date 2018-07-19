@@ -34,6 +34,12 @@ public class MemberServiceImpl implements MemberService {
 		
 		return dao.loginCheck(dto);
 	}
+
+	@Override
+	public List<MemberDTO> selectMypage(String email) {
+		
+		return dao.selectMypage(email);
+	}
 	
 
 	

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,7 +48,7 @@
 						aria-expanded="false">Member Management<span class="caret"></span></a>
 
 						<ul class="dropdown-menu">
-							<li><a href="mypage.do">마이페이지</a></li>
+							<li><a href="mypage.do?email=${sessionScope.userID}">마이페이지</a></li>
 							<li><a href="modifyInfo.jsp">회원정보수정</a></li>
 							<li><a href="memberleave.jsp">회원탈퇴</a></li>
 							<li><a href="logout.jsp">로그아웃</a></li>
