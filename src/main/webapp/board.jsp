@@ -55,7 +55,7 @@
 			</div>
 		</nav>
 	</header>
-
+	
 	<!-- table -->
 	<section>
 		<table class="table table-hover">

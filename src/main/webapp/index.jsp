@@ -18,7 +18,6 @@
 </head>
 <body>
 
-	<header>
 
 		<!-- nav -->
 		<header>
@@ -47,7 +46,6 @@
 			</nav>
 		</header>
 
-	</header>
 
 
 
