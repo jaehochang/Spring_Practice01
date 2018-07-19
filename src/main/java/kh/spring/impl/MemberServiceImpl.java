@@ -1,8 +1,6 @@
 package kh.spring.impl;
 
 import java.util.List;
-import kh.spring.dto.MemberDTO;
-import kh.spring.interfaces.MemberService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -10,6 +8,7 @@ import org.springframework.stereotype.Component;
 import kh.spring.dto.MemberDTO;
 import kh.spring.interfaces.MemberDAO;
 import kh.spring.interfaces.MemberService;
+
 
 @Component
 public class MemberServiceImpl implements MemberService {
@@ -21,6 +20,7 @@ public class MemberServiceImpl implements MemberService {
 	public int insertMember(MemberDTO dto) {
 		
 		return dao.insertMember(dto);
+		
 	}
 
 	@Override
@@ -29,11 +29,8 @@ public class MemberServiceImpl implements MemberService {
 		return dao.selectMember();
 	}
 	
-	@Override
-	public Boolean loginCheck(MemberDTO dto) {
-		
-		return dao.loginCheck(dto);
-	}
+
+	
 	
 	
 }
