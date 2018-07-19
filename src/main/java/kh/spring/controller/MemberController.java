@@ -14,12 +14,12 @@ public class MemberController {
 	public String toIndex() {
 		return "redirect:index.jsp";
 	}
-	
+
 	@RequestMapping("/sign.do")
 	public String toSign() {
 		return "redirect:sign.jsp";
 	}
-	
+
 	@RequestMapping("/signProc.do")
 	public ModelAndView signProc(MemberDTO dto) {
 		ModelAndView mav = new ModelAndView();
@@ -28,30 +28,28 @@ public class MemberController {
 		mav.setViewName("signProc.jsp");
 		return mav;
 	}
-	
-@Autowired
-private MemberService service;
 
-@RequestMapping("/main.do")
-public String toMain() {
-	return "redirect:main.jsp";
-	
-}
+	@Autowired
+	private MemberService service;
 
-@RequestMapping("/loginProc.do")
-public ModelAndView toLoginProc(MemberDTO dto) {
-	ModelAndView mav=new ModelAndView();
-	
-	Boolean result=service.loginCheck(dto);
-	if(result==true) {
-		mav.setViewName("main.jsp");
-		return mav;
-	}else {
-		mav.setViewName("signup.jsp");
-		return mav;
+	@RequestMapping("/main.do")
+	public String toMain() {
+		return "redirect:main.jsp";
+
 	}
-	
-	
-	
-}
+
+	@RequestMapping("/loginProc.do")
+	public ModelAndView toLoginProc(MemberDTO dto) {
+		ModelAndView mav = new ModelAndView();
+
+		Boolean result = service.loginCheck(dto);
+		if (result == true) {
+			mav.setViewName("main.jsp");
+			return mav;
+		} else {
+			mav.setViewName("signup.jsp");
+			return mav;
+		}
+
+	}
 }
