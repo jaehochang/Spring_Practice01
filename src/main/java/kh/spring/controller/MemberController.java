@@ -22,6 +22,12 @@ public class MemberController {
 		return "redirect:sign.jsp";
 	}
 	
+	@RequestMapping("/login.do")
+	public String toLogin() {
+		return "redirect:login.jsp";
+	}
+	
+	
 	@RequestMapping("/signProc.do")
 	public ModelAndView signProc(MemberDTO dto) {
 		ModelAndView mav = new ModelAndView();
@@ -45,14 +51,14 @@ public ModelAndView toLoginProc(MemberDTO dto,HttpSession session) {
 	ModelAndView mav=new ModelAndView();
 	
 	Boolean result=service.loginCheck(dto);
-	System.out.println("컨트롤러 : "+result);
+
 	if(result==true) {
 		session.setAttribute("userID", dto.getEmail());
 		System.out.println(session.getAttribute("userID"));
 		mav.setViewName("main.jsp");
 		return mav;
 	}else {
-		mav.setViewName("signup.jsp");
+		mav.setViewName("sign.do");
 		return mav;
 	}
 	
