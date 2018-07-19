@@ -13,7 +13,7 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<title>·Î±×ÀÎ</title>
+<title>ï¿½Î±ï¿½ï¿½ï¿½</title>
 </head>
 <body>
 	<nav class="navbar navbar-default">
