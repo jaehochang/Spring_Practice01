@@ -13,8 +13,8 @@
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
-	
-	
+
+
 	<!-- oracle jdbc -->
 	<repositories>
 		<repository>
@@ -23,8 +23,8 @@
 		</repository>
 
 	</repositories>
-	
-	
+
+
 	<dependencies>
 		<!-- Spring -->
 		<dependency>
@@ -75,6 +75,26 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 
+		<!-- CHATBOT -->
+
+		<dependencies>
+
+			<dependency>
+
+				<artifactId>com.google</artifactId>
+
+				<groupId>Ab</groupId>
+
+				<version>0.0.4.3</version>
+
+				<scope>system</scope>
+
+				<systemPath>${basedir}/lib/Ab.jar</systemPath>
+
+			</dependency>
+
+		</dependencies>
+
 		<!-- Logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -117,26 +137,26 @@
 			</exclusions>
 			<scope>runtime</scope>
 		</dependency>
-		
-		<!-- oracle  -->
+
+		<!-- oracle -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.4</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc6</artifactId>
 			<version>12.1.0.2</version>
 		</dependency>
-		<!--  -->
+		<!-- -->
 
 		<!-- @Inject -->
 		<dependency>
