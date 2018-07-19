@@ -41,7 +41,7 @@
 					<ul class="dropdown-menu">
 
 						<li class="active"><a href="login.jsp">Login</a></li>
-						<li><a href="signup.html">SignUp</a></li>
+						<li><a href="sign.do">SignUp</a></li>
 					</ul></li>
 			</ul>
 		</div>

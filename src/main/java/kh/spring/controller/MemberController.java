@@ -43,12 +43,12 @@ public ModelAndView toLoginProc(MemberDTO dto) {
 	ModelAndView mav=new ModelAndView();
 	
 	Boolean result=service.loginCheck(dto);
-	System.out.println("컨트롤러 : "+result);
+
 	if(result==true) {
 		mav.setViewName("main.jsp");
 		return mav;
 	}else {
-		mav.setViewName("signup.jsp");
+		mav.setViewName("sign.do");
 		return mav;
 	}
 	
