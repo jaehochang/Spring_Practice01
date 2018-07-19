@@ -10,10 +10,6 @@ import kh.spring.interfaces.MemberService;
 
 @Controller
 public class MemberController {
-	
-	@Autowired
-	private MemberService service;
-	
 	@RequestMapping("/index.do")
 	public String toIndex() {
 		return "redirect:index.jsp";
@@ -33,4 +29,29 @@ public class MemberController {
 		return mav;
 	}
 	
+@Autowired
+private MemberService service;
+
+@RequestMapping("/main.do")
+public String toMain() {
+	return "redirect:main.jsp";
+	
+}
+
+@RequestMapping("/loginProc.do")
+public ModelAndView toLoginProc(MemberDTO dto) {
+	ModelAndView mav=new ModelAndView();
+	
+	Boolean result=service.loginCheck(dto);
+	if(result==true) {
+		mav.setViewName("main.jsp");
+		return mav;
+	}else {
+		mav.setViewName("signup.jsp");
+		return mav;
+	}
+	
+	
+	
+}
 }
