@@ -40,6 +40,20 @@ public class MemberServiceImpl implements MemberService {
 		
 		return dao.selectMypage(email);
 	}
+
+	@Override
+	public List<MemberDTO> update(MemberDTO dto) {
+		int result =  dao.update(dto);
+		
+		if(result > 0) {
+			
+			return dao.selectMypage(dto.getEmail());
+		}else {
+			
+			System.out.println("수정 실패");
+			return dao.selectMypage(dto.getEmail());
+		}
+	}
 	
 
 	
