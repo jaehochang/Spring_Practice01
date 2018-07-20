@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
-<!-- encoding 때문에 글씨 깨지는 거 확인  -->
+<!-- encoding ��臾몄�� 湲��� 源⑥��� 嫄� ����  -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +18,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
-<title>占쏙옙占쏙옙</title>
+<title>������������</title>
 <style>
 
 /* CSS Document */
@@ -244,10 +244,10 @@ $(document).ready(function(){
 						aria-expanded="false">Member Management<span class="caret"></span></a>
 
 						<ul class="dropdown-menu">
-							<li><a href="mypage.do">占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙</a></li>
-							<li><a href="modifyInfo.jsp">회占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙</a></li>
-							<li><a href="memberleave.jsp">회占쏙옙탈占쏙옙</a></li>
-							<li><a href="logout.jsp">占싸그아울옙</a></li>
+							<li><a href="mypage.do">Mypage</a></li>
+							<li><a href="modifyInfo.jsp">Modify</a></li>
+							<li><a href="memberleave.jsp">MemberLeave</a></li>
+							<li><a href="logout.jsp">LogOut</a></li>
 						</ul></li>
 				</ul>
 
@@ -262,10 +262,10 @@ $(document).ready(function(){
 			<div class="jumbotron">
 				<div class="container">
 
-					<h1>환占쏙옙占쌌니댐옙</h1>
-					<p>占쌕어난 占쏙옙占쏙옙占쏙옙占쏙옙 占쌕억옙占쏙옙 占쏙옙占쏙옙占� 占쏙옙占쏙옙占쏙옙占쏙옙</p>
+					<h1>4 Developers</h1>
+					<p>We make member,main,board etc through various kinds of functions</p>
 					<a class="btn btn-primary btn-pull"
-						href="http://www.iei.or.kr/main/main.kh" role="button">占쌕로곤옙占쏙옙</a>
+						href="http://www.iei.or.kr/main/main.kh" role="button">More</a>
 				</div>
 
 			</div>
@@ -286,9 +286,9 @@ $(document).ready(function(){
 			
 			<a href="#" class="chat-close">x</a>
 
-			<h4>占쏙옙</h4>
+			<h4>hi</h4>
 
-			<span class="chat-message-counter">3</span>
+			<span class="chat-message-counter">5</span>
 
 		</header>
 
@@ -304,9 +304,9 @@ $(document).ready(function(){
 						
 						<span class="chat-time">13:35</span>
 
-						<h5>John Doe</h5>
+						<h5>JaehoJang</h5>
 
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, explicabo quasi ratione odio dolorum harum.</p>
+						<p>u should finish this web chatting function until today!!!</p>
 
 					</div> <!-- end chat-message-content -->
 
@@ -352,13 +352,13 @@ $(document).ready(function(){
 
 			</div> <!-- end chat-history -->
 
-			<p class="chat-feedback">Your partner is typing占쏙옙</p>
+			<p class="chat-feedback">Your partner is typing������</p>
 
 			<form action="#" method="post">
 
 				<fieldset>
 					
-					<input type="text" placeholder="Type your message占쏙옙" autofocus>
+					<input type="text" placeholder="Type your message������" autofocus>
 					<input type="hidden">
 
 				</fieldset>
