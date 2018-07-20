@@ -292,7 +292,7 @@ $(document).ready(function(){
 							<li><a href="mypage.do">Mypage</a></li>
 							<li><a href="modifyInfo.jsp">Modify</a></li>
 							<li><a href="memberleave.jsp">MemberLeave</a></li>
-							<li><a href="logout.jsp">LogOut</a></li>
+							<li><a href="logout.do">LogOut</a></li>
 						</ul></li>
 				</ul>
 
