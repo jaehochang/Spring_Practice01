@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!-- encoding 때문에 글씨 깨지는 거 확인  -->
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
@@ -244,10 +244,10 @@ $(document).ready(function(){
 						aria-expanded="false">Member Management<span class="caret"></span></a>
 
 						<ul class="dropdown-menu">
-							<li><a href="mypage.do">占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙</a></li>
-							<li><a href="modifyInfo.jsp">회占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙</a></li>
-							<li><a href="memberleave.jsp">회占쏙옙탈占쏙옙</a></li>
-							<li><a href="logout.jsp">占싸그아울옙</a></li>
+							<li><a href="mypage.do">나의페이지</a></li>
+							<li><a href="modifyInfo.jsp">회원수정</a></li>
+							<li><a href="memberleave.jsp">회원탈퇴</a></li>
+							<li><a href="logout.jsp">로그아웃</a></li>
 						</ul></li>
 				</ul>
 
@@ -262,10 +262,10 @@ $(document).ready(function(){
 			<div class="jumbotron">
 				<div class="container">
 
-					<h1>환占쏙옙占쌌니댐옙</h1>
-					<p>占쌕어난 占쏙옙占쏙옙占쏙옙占쏙옙 占쌕억옙占쏙옙 占쏙옙占쏙옙占� 占쏙옙占쏙옙占쏙옙占쏙옙</p>
+					<h1>?????</h1>
+					<p>글씨겁나 깨짐</p>
 					<a class="btn btn-primary btn-pull"
-						href="http://www.iei.or.kr/main/main.kh" role="button">占쌕로곤옙占쏙옙</a>
+						href="http://www.iei.or.kr/main/main.kh" role="button">글씨깨짐 </a>
 				</div>
 
 			</div>
