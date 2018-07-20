@@ -277,8 +277,8 @@ $(document).ready(function(){
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="home.mo">Main</a></li>
-					<li><a href="board.bo">Board</a></li>
+					<li class="active" style="font-size:15px;font-weight:bold;"><a href="home.mo">Main</a></li>
+					<li><a href="board.bo" style="font-size:15px;font-weight:bold;">Board</a></li>
 				</ul>
 
 
@@ -286,7 +286,7 @@ $(document).ready(function(){
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false">Member Management<span class="caret"></span></a>
+						aria-expanded="false" style="font-size:15px;font-weight:bold;">Member Management<span class="caret"></span></a>
 
 						<ul class="dropdown-menu">
 							<li><a href="mypage.do">Mypage</a></li>
