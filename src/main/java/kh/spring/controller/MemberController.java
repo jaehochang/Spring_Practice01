@@ -75,15 +75,21 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/deleteProc.do")
-	public ModelAndView toDeleteProc() {
-		
-		return null;
+	public ModelAndView toDeleteProc(int seq) {
+		ModelAndView mav = new ModelAndView();
+		int result = service.deleteMember(seq);
+		mav.addObject("result", result);
+		mav.setViewName("deleteProc.jsp");
+		return mav;
 	}
 	
 	@RequestMapping("/updateProc.do")
-	public ModelAndView toUpdateProc() {
-		
-		return null;
+	public ModelAndView toUpdateProc(MemberDTO dto ,int seq) {
+		ModelAndView mav = new ModelAndView();
+		int result = service.modifyMember(dto, seq);
+		mav.addObject("result", result);
+		mav.setViewName("updateProc.jsp");
+		return mav;
 	}
 	
 }
