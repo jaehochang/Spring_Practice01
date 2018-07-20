@@ -73,7 +73,7 @@
 					aria-expanded="false">Access<span class="caret"></span></a>
 					<ul class="dropdown-menu">
 
-						<li class="active"><a href="login.jsp">Logout</a></li>
+						<li class="active"><a href="logout.do">Logout</a></li>
 						
 					</ul></li>
 			</ul>

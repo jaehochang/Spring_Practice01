@@ -289,7 +289,7 @@ $(document).ready(function(){
 						aria-expanded="false">Member Management<span class="caret"></span></a>
 
 						<ul class="dropdown-menu">
-							<li><a href="mypage.do?email=${sessionScope.email}">Mypage</a></li>
+							<li><a href="mypage.do?email=${sessionScope.userID}">Mypage</a></li>
 							<li><a href="modifyInfo.jsp">Modify</a></li>
 							<li><a href="memberleave.jsp">MemberLeave</a></li>
 							<li><a href="logout.do">LogOut</a></li>
