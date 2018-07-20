@@ -92,4 +92,9 @@ public class MemberController {
 		return mav;
 	}
 	
+	@RequestMapping("/mypage.do")
+	public String toMypage() {
+		return "mypage.jsp";
+	}
+	
 }
