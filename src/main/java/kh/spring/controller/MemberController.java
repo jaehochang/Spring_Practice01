@@ -34,6 +34,8 @@ public class MemberController {
 	@RequestMapping("/signProc.do")
 	public ModelAndView signProc(MemberDTO dto) {
 		ModelAndView mav = new ModelAndView();
+		
+		
 		int result = service.insertMember(dto);
 		mav.addObject("result", result);
 		mav.setViewName("signProc.jsp");
