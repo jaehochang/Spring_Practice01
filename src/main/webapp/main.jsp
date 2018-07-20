@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
-<!-- encoding ��臾몄�� 湲��� 源⑥��� 嫄� ����  -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +18,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
-<title>������������</title>
+<title>Main</title>
 <style>
 
 /* CSS Document */
@@ -211,6 +211,51 @@ $(document).ready(function(){
 		$('#live-chat').fadeOut(300);
 
 	});
+	
+	$("#chatText").keypress(function(e){
+		if(e.keyCode==13){
+			var keyword=this.value;
+			$("#chatText").val("");
+			if(keyword.length>0){
+				$.ajax({
+					  url:'sendChat.mo',
+					  data:{chatText:keyword},
+					  success:function(){
+						  console.log("입력성공");
+					  },error:function(){
+						  console.log("에러발생");
+					  }
+						
+						
+					})
+				
+			}
+			e.preventDefault();
+			
+			
+		}
+		
+		
+	})
+	
+         setInterval(function(){
+			
+			$.ajax({
+			    url:"receiveChat.mo",
+			    type:"get",
+			    success:function(response){
+			    	$('.chat-message clearfix').html(response);
+			    }
+				
+				
+			})
+			
+		},500)	
+		
+		
+	
+	
+	
 })
 
 </script>
@@ -314,54 +359,17 @@ $(document).ready(function(){
 
 				<hr>
 
-				<div class="chat-message clearfix">
-					
-					<img src="http://gravatar.com/avatar/2c0ad52fc5943b78d6abe069cc08f320?s=32" alt="" width="32" height="32">
-
-					<div class="chat-message-content clearfix">
-						
-						<span class="chat-time">13:37</span>
-
-						<h5>Marco Biedermann</h5>
-
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, nulla accusamus magni vel debitis numquam qui tempora rem voluptatem delectus!</p>
-
-					</div> <!-- end chat-message-content -->
-
-				</div> <!-- end chat-message -->
-
-				<hr>
-
-				<div class="chat-message clearfix">
-					
-					<img src="http://lorempixum.com/32/32/people" alt="" width="32" height="32">
-
-					<div class="chat-message-content clearfix">
-						
-						<span class="chat-time">13:38</span>
-
-						<h5>John Doe</h5>
-
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-
-					</div> <!-- end chat-message-content -->
-
-				</div> <!-- end chat-message -->
-
-				<hr>
-
+				
 			</div> <!-- end chat-history -->
 
-			<p class="chat-feedback">Your partner is typing������</p>
+			<p class="chat-feedback">Your partner is typing</p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+			<form onsubmit="return submitchat();">
 
-			<form action="#" method="post">
 
-				<fieldset>
-					
-					<input type="text" placeholder="Type your message������" autofocus>
+					<input type="text" id="chatText" autofocus>
 					<input type="hidden">
 
-				</fieldset>
 
 			</form>
 
@@ -369,7 +377,7 @@ $(document).ready(function(){
 
 	</div> <!-- end live-chat -->
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+	
 	
 
 
