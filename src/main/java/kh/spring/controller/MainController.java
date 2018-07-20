@@ -39,13 +39,13 @@ public class MainController {
 			chat.remove(0);
 		}
 		
-		StringBuilder sb=new StringBuilder();
+	
 		for(String tmp:chat) {
 			System.out.println(tmp);
-			sb.append(tmp+"<br>");
+			
 		}
 		
-		out.println(sb.toString());
+		
 		
 	}
 	
