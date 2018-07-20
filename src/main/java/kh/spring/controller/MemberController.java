@@ -75,9 +75,9 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/deleteProc.do")
-	public ModelAndView toDeleteProc(int seq) {
+	public ModelAndView toDeleteProc(MemberDTO dto) {
 		ModelAndView mav = new ModelAndView();
-		int result = service.deleteMember(seq);
+		int result = service.deleteMember(dto);
 		mav.addObject("result", result);
 		mav.setViewName("deleteProc.jsp");
 		return mav;

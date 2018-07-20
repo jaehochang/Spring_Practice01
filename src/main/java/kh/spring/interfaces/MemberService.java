@@ -9,6 +9,6 @@ public interface MemberService {
 	public int insertMember(MemberDTO dto);
 	public List<MemberDTO> selectMember();
 	public Boolean loginCheck(MemberDTO dto);
-	public int deleteMember(int seq);
+	public int deleteMember(MemberDTO dto);
 	public int modifyMember(MemberDTO dto , int seq);
 }
