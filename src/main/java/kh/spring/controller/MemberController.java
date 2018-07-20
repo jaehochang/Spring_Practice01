@@ -76,6 +76,16 @@ public class MemberController {
 		mav.addObject("result", result); 
 		mav.setViewName("mypage.jsp");
 		
+	@RequestMapping("/delete.do")
+	public String toDelete() {
+		return "redirect:delete.jsp";
+	}
+	@RequestMapping("/deleteProc.do")
+	public ModelAndView toDeleteProc(MemberDTO dto) {
+		ModelAndView mav = new ModelAndView();
+		int result = service.deleteMember(dto);
+		mav.addObject("result", result);
+		mav.setViewName("deleteProc.jsp");
 		return mav;
 		
 		

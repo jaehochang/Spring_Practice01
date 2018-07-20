@@ -11,4 +11,8 @@ public interface MemberDAO {
 
 	public Boolean loginCheck(MemberDTO dto);
 	public List<MemberDTO> selectMypage(String email);
+	
+	public int deleteMember(MemberDTO dto);
+	
+	public int modifyMember(MemberDTO dto , int seq);
 }

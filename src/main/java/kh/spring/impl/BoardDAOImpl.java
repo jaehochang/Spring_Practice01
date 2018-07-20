@@ -13,6 +13,7 @@ public class BoardDAOImpl implements BoardDAO{
 	@Autowired
 	public JdbcTemplate template;
 	
+	
 	public int writing(BoardDTO dto) {
 		
 		String sql="insert into board values(board_seq.nextval,?,?,?,sysdate)";

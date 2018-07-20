@@ -31,7 +31,6 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public Boolean loginCheck(MemberDTO dto) {
-		
 		return dao.loginCheck(dto);
 	}
 
@@ -40,7 +39,21 @@ public class MemberServiceImpl implements MemberService {
 		
 		return dao.selectMypage(email);
 	}
+
+	@Override
+	public int deleteMember(MemberDTO dto) {
+		
+		return dao.deleteMember(dto);
+	}
+
+	@Override
+	public int modifyMember(MemberDTO dto, int seq) {
+		
+		return dao.modifyMember(dto, seq);
+	}
 	
 
+	
+	
 	
 }

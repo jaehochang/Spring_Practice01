@@ -12,7 +12,6 @@ import org.springframework.stereotype.Component;
 import kh.spring.dto.MemberDTO;
 import kh.spring.interfaces.MemberDAO;
 
-
 @Component
 public class MemberDAOImpl implements MemberDAO{
 
@@ -85,6 +84,20 @@ public class MemberDAOImpl implements MemberDAO{
 		
 	
 	}
+	
+	
+	@Override
+	public int deleteMember(MemberDTO dto) {
+		String sql = "delete member where email = ? and PW = ? ";
+		return template.update(sql, dto.getEmail() ,dto.getPw());
+	}
+	
+	
+	@Override
+	public int modifyMember(MemberDTO dto, int seq) {
+		String sql = "update member set email = ?, pw = ?, nickname = ?  where seq =?";
+		return template.update(sql, dto.getEmail(),dto.getPw(),dto.getNickname(),seq);
+	}
 
 	@Override
 	public List<MemberDTO> selectMypage(String email) {
@@ -97,11 +110,11 @@ public class MemberDAOImpl implements MemberDAO{
 		System.out.println(result.size());
 		if(result.size() > 0) {
 			
-			System.out.println("ºÒ·¯¿À±â ¼º°ø");
+			System.out.println("ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 		return result;
 		
 		}else {
-			System.out.println("ºÒ·¯¿À±â ½ÇÆÐ");
+			System.out.println("ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 			return result;
 		}
 		
