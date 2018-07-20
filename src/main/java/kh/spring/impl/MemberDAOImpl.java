@@ -67,6 +67,47 @@ public class MemberDAOImpl implements MemberDAO {
 			result = true;
 		}
 		return result;
+		
+//		String sql = "select * from member where email=? and pw=?";
+//		List<MemberDTO> result= template.query(sql, new RowMapper() {
+//
+//			@Override
+//			public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
+//				
+//				MemberDTO dto = new MemberDTO();
+//				
+//				dto.setEmail(rs.getString("email"));
+//	            dto.setPw(rs.getString("pw"));
+//	            return dto;
+//			
+//			}
+//			
+//		}, dto.getEmail(), dto.getPw()); 
+//				
+//				
+//		if(result.size() >0) {
+//			return true;
+//		}else {
+//			return false;
+//		}
+		
+		
+	
+	}
+	
+	
+	@Override
+	public int deleteMember(MemberDTO dto) {
+		String sql = "delete member where email = ? and PW = ? ";
+		return template.update(sql, dto.getEmail() ,dto.getPw());
+	}
+	
+	
+	@Override
+	public int modifyMember(MemberDTO dto, int seq) {
+		String sql = "update member set email = ?, pw = ?, nickname = ?  where seq =?";
+		return template.update(sql, dto.getEmail(),dto.getPw(),dto.getNickname(),seq);
+	}
 
 		// String sql = "select * from member where email=? and pw=?";
 		// List<MemberDTO> result= template.query(sql, new RowMapper() {
@@ -91,6 +132,5 @@ public class MemberDAOImpl implements MemberDAO {
 		// return false;
 		// }
 
-	}
 
 }

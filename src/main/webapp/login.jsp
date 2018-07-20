@@ -19,7 +19,9 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>Login</title>
+
 <style>
+
 /* CSS Document */
 
 /* ---------- GENERAL ---------- */
@@ -232,18 +234,18 @@ p {
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="main.jsp">Main</a></li>
-				<li><a href="board.jsp">Board</a></li>
+				<li><a href="main.jsp" style="font-size:15px;font-weight:bold;">Main</a></li>
+				<li><a href="board.jsp" style="font-size:15px;font-weight:bold;">Board</a></li>
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-haspopup="true"
-					aria-expanded="false">Access<span class="caret"></span></a>
+					aria-expanded="false" style="font-size:15px;font-weight:bold;">Access<span class="caret"></span></a>
 					<ul class="dropdown-menu">
 
-						<li class="active"><a href="login.jsp">Login</a></li>
-						<li><a href="sign.jsp">SignUp</a></li>
+						<li class="active" ><a href="login.jsp">Login</a></li>
+						<li><a href="sign.jsp" >SignUp</a></li>
 					</ul></li>
 			</ul>
 		</div>
@@ -280,9 +282,9 @@ p {
 
 			<a href="#" class="chat-close">x</a>
 
-			<h4>John Doe</h4>
+			<h4>Hello</h4>
 
-			<span class="chat-message-counter">3</span>
+			<span class="chat-message-counter">599</span>
 
 		</header>
 
@@ -299,10 +301,11 @@ p {
 
 						<span class="chat-time">13:35</span>
 
-						<h5>John Doe</h5>
+						<h5>Jieun Son</h5>
 
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-							Error, explicabo quasi ratione odio dolorum harum.</p>
+						<p>I wanted to make chat Bot using kakaoAPI BUT I couldn't analyze how to make 
+						sorry it will take a time to make so please wait for me for final Project 
+						i will make awesome function</p>
 
 					</div>
 					<!-- end chat-message-content -->
@@ -322,11 +325,9 @@ p {
 
 						<span class="chat-time">13:37</span>
 
-						<h5>Marco Biedermann</h5>
+						<h5>Jaeho Jang</h5>
 
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-							Blanditiis, nulla accusamus magni vel debitis numquam qui tempora
-							rem voluptatem delectus!</p>
+						<p>okie i will wait Jieun</p>
 
 					</div>
 					<!-- end chat-message-content -->
@@ -345,9 +346,9 @@ p {
 
 						<span class="chat-time">13:38</span>
 
-						<h5>John Doe</h5>
+						<h5>ChanyanKim</h5>
 
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+						<p>NoJam Jam is in refrig</p>
 
 					</div>
 					<!-- end chat-message-content -->
@@ -360,13 +361,13 @@ p {
 			</div>
 			<!-- end chat-history -->
 
-			<p class="chat-feedback">Your partner is typing¡¦</p>
+			<p class="chat-feedback">Your partner is typingï¿½ï¿½</p>
 
 			<form action="#" method="post">
 
 				<fieldset>
 
-					<input type="text" placeholder="Type your message¡¦" autofocus>
+					<input type="text" placeholder="Type your messageï¿½ï¿½" autofocus>
 					<input type="hidden">
 
 				</fieldset>

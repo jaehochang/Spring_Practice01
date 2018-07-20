@@ -15,6 +15,7 @@ public class MemberController {
 
 	@Autowired
 	private MemberService service;
+	// �닚�꽌�뒗 留욎땅�떆�떎 
 
 	@RequestMapping("/index.do")
 	public String toIndex() {
@@ -64,5 +65,46 @@ public class MemberController {
 		return "redirect:main.jsp";
 
 	}
-
+	
+	@RequestMapping("/delete.do")
+	public String toDelete() {
+		return "redirect:memberleave.jsp";
+	}
+	
+	@RequestMapping("/update.do")
+	public String toUpdate() {
+		return "redirect:update.jsp";
+	}
+	
+	@RequestMapping("/deleteProc.do")
+	public ModelAndView toDeleteProc(MemberDTO dto) {
+		ModelAndView mav = new ModelAndView();
+		int result = service.deleteMember(dto);
+		mav.addObject("result", result);
+		mav.setViewName("memberleaveProc.jsp");
+		return mav;
+	}
+	
+	@RequestMapping("/updateProc.do")
+	public ModelAndView toUpdateProc(MemberDTO dto ,int seq) {
+		ModelAndView mav = new ModelAndView();
+		int result = service.modifyMember(dto, seq);
+		mav.addObject("result", result);
+		mav.setViewName("updateProc.jsp");
+		return mav;
+	}
+	
+	@RequestMapping("/logout.do")
+	public String tologOut(HttpSession session) {
+		session.invalidate();
+		return "redirect:login.jsp";
+	}
+	
+	
+	
+	@RequestMapping("/mypage.do")
+	public String toMypage() {
+		return "mypage.jsp";
+	}
+	
 }

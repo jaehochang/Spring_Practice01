@@ -55,7 +55,7 @@ public class BoardController {
 
 		List<BoardDTO> result = this.bService.getAllBoardList(startNum, endNum);
 
-		// result °¡ null ÀÌ¸é, lastPageNum ÀÌ ¾ø´Ù´Â °Í.
+		// result ï¿½ï¿½ null ï¿½Ì¸ï¿½, lastPageNum ï¿½ï¿½ ï¿½ï¿½ï¿½Ù´ï¿½ ï¿½ï¿½.
 		System.out.println(result);
 		boolean lastPageNull = false;
 		try {
@@ -73,6 +73,7 @@ public class BoardController {
 		return mav;
 
 	}
+	
 
 	@RequestMapping("/writing.bo")
 	public int writing(@RequestParam BoardDTO dto) {
@@ -87,4 +88,8 @@ public class BoardController {
 		this.bService.getDummyData();
 	}
 
+	@RequestMapping("/home.bo")
+	public String toHome() {
+		return "home.jsp";
+	}
 }
