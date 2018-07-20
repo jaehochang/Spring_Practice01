@@ -21,6 +21,7 @@ public class BoardController {
 
 		return "redirect:board.jsp";
 	}
+	
 
 	@RequestMapping("/writing.bo")
 	public int writing(@RequestParam BoardDTO dto) {
@@ -30,4 +31,8 @@ public class BoardController {
 		return result;
 	}
 
+	@RequestMapping("/home.bo")
+	public String toHome() {
+		return "home.jsp";
+	}
 }

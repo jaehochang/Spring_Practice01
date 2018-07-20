@@ -66,7 +66,7 @@ public class MemberController {
 	
 	@RequestMapping("/delete.do")
 	public String toDelete() {
-		return "redirect:delete.jsp";
+		return "redirect:memberleave.jsp";
 	}
 	
 	@RequestMapping("/update.do")
@@ -79,7 +79,7 @@ public class MemberController {
 		ModelAndView mav = new ModelAndView();
 		int result = service.deleteMember(dto);
 		mav.addObject("result", result);
-		mav.setViewName("deleteProc.jsp");
+		mav.setViewName("memberleaveProc.jsp");
 		return mav;
 	}
 	
@@ -99,5 +99,10 @@ public class MemberController {
 	}
 	
 	
+	
+	@RequestMapping("/mypage.do")
+	public String toMypage() {
+		return "mypage.jsp";
+	}
 	
 }
