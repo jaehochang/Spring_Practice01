@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
@@ -221,9 +221,9 @@ $(document).ready(function(){
 					  url:'sendChat.mo',
 					  data:{chatText:keyword},
 					  success:function(){
-						  console.log("입력성공");
+						  console.log("���μ�깃났");
 					  },error:function(){
-						  console.log("에러발생");
+						  console.log("���щ���");
 					  }
 						
 						
@@ -289,7 +289,7 @@ $(document).ready(function(){
 						aria-expanded="false">Member Management<span class="caret"></span></a>
 
 						<ul class="dropdown-menu">
-							<li><a href="mypage.do">Mypage</a></li>
+							<li><a href="mypage.do?email=${sessionScope.email}">Mypage</a></li>
 							<li><a href="modifyInfo.jsp">Modify</a></li>
 							<li><a href="memberleave.jsp">MemberLeave</a></li>
 							<li><a href="logout.do">LogOut</a></li>

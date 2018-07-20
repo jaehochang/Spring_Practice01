@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
 <head>
@@ -62,9 +62,9 @@
 			<thead>
 				<tr>
 					<th scope="col">#</th>
-					<th scope="col">±Û Á¦¸ñ</th>
-					<th scope="col">ÀÛ¼ºÀÚ</th>
-					<th scope="col">ÀÛ¼ºÀÏ</th>
+					<th scope="col">ê¸€ ì œëª©</th>
+					<th scope="col">ìž‘ì„±ìž</th>
+					<th scope="col">ìž‘ì„±ì¼</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -145,24 +145,24 @@
 
 	</section>
 
-	<!-- ÀÛ¼º ±Û °ü·Ã ¹öÆ°µé -->
+	<!-- ìž‘ì„± ê¸€ ê´€ë ¨ ë²„íŠ¼ë“¤ -->
 	<section class=container>
 		<div class="btn-group" role="group" aria-label="Basic example">
 			<button id="writing" type="button" class="btn btn-secondary"
-				data-toggle="modal" data-target="#writingModal" data-whatever="@mdo">±Û¾²±â</button>
-			<button type="button" class="btn btn-secondary">±Û Áö¿ì±â</button>
-			<button type="button" class="btn btn-secondary">±Û ¹Ù²Ù±â</button>
+				data-toggle="modal" data-target="#writingModal" data-whatever="@mdo">ê¸€ì“°ê¸°</button>
+			<button type="button" class="btn btn-secondary">ê¸€ ì§€ìš°ê¸°</button>
+			<button type="button" class="btn btn-secondary">ê¸€ ë°”ê¾¸ê¸°</button>
 		</div>
 	</section>
 
 
-	<!-- 	±Û ÀÛ¼º ¸ð´Þ -->
+	<!-- 	ê¸€ ìž‘ì„± ëª¨ë‹¬ -->
 	<div class="modal fade" id="writingModal" tabindex="-1" role="dialog"
 		aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">±Û¾²±â</h5>
+					<h5 class="modal-title" id="exampleModalLabel">ê¸€ì“°ê¸°</h5>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
@@ -171,12 +171,12 @@
 				<form action="writing.bo" method=get>
 					<div class="modal-body">
 						<div class="form-group">
-							<label for="recipient-name" class="col-form-label">±Û Á¦¸ñ</label> <input
+							<label for="recipient-name" class="col-form-label">ê¸€ ì œëª©</label> <input
 								type="text" name="title" class="form-control"
 								id="recipient-name">
 						</div>
 						<div class="form-group">
-							<label for="message-text" class="col-form-label">±Û ³»¿ë</label>
+							<label for="message-text" class="col-form-label">ê¸€ ë‚´ìš©</label>
 							<textarea class="form-control" id="message-text" name="contents"></textarea>
 							<input type="hidden" name="writer"
 								value="${sessionScope.loginId}">
@@ -185,8 +185,8 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary"
-							data-dismiss="modal">´Ý±â</button>
-						<button type="submit" class="btn btn-primary">¾²±â</button>
+							data-dismiss="modal">ë‹«ê¸°</button>
+						<button type="submit" class="btn btn-primary">ì“°ê¸°</button>
 					</div>
 				</form>
 			</div>

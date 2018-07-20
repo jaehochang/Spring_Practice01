@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC>
 <html>
 <head>
@@ -340,13 +340,13 @@ $(document).ready(function(){
 
 			</div> <!-- end chat-history -->
 
-			<p class="chat-feedback">Your partner is typing¡¦</p>
+			<p class="chat-feedback">Your partner is typingâ€¦</p>
 
 			<form action="#" method="post">
 
 				<fieldset>
 					
-					<input type="text" placeholder="Type your message¡¦" autofocus>
+					<input type="text" placeholder="Type your messageâ€¦" autofocus>
 					<input type="hidden">
 
 				</fieldset>

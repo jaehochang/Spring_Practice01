@@ -76,6 +76,8 @@ public class MemberController {
 		mav.addObject("result", result); 
 		mav.setViewName("mypage.jsp");
 		
+		return mav;
+	}	
 	@RequestMapping("/delete.do")
 	public String toDelete() {
 		return "redirect:delete.jsp";

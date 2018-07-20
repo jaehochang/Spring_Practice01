@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700">
@@ -114,7 +114,7 @@
 				<br>
 				<br>
 				
-				<input type="button" value="¼öÁ¤" class="btn btn-toggle btn btn-warning" data-toggle="modal"  data-target="#myModal" style="width:150px; margin-left:35px;">
+				<input type="button" value="ìˆ˜ì •" class="btn btn-toggle btn btn-warning" data-toggle="modal"  data-target="#myModal" style="width:150px; margin-left:35px;">
 				<div class="modal fade" id="myModal">
   				<div class="modal-dialog">
     			<div class="modal-content">
@@ -125,19 +125,19 @@
       				<c:forEach var="item" items="${updateResult}">
       				 <div class="md-form mb-5">
                         <br> <i class="fa fa-user prefix grey-text"></i> <label
-                           data-error="ÇÑ±Û¸¸ ÀÔ·ÂÇØÁÖ¼¼¿ä." data-success="O.K" for="form34">No</label><input
+                           data-error="í•œê¸€ë§Œ ìž…ë ¥í•´ì£¼ì„¸ìš”." data-success="O.K" for="form34">No</label><input
                            type="text" id="form34" class="form-control validate"
                            name="seq" readonly="readonly" value="${item.seq}"> 
                      </div>
        		 		 <div class="md-form mb-5">
                         <br> <i class="fa fa-user prefix grey-text"></i> <label
-                           data-error="ÇÑ±Û¸¸ ÀÔ·ÂÇØÁÖ¼¼¿ä." data-success="O.K" for="form34">Email</label><input
+                           data-error="í•œê¸€ë§Œ ìž…ë ¥í•´ì£¼ì„¸ìš”." data-success="O.K" for="form34">Email</label><input
                            type="text" id="form34" class="form-control validate"
                            name="email" readonly="readonly" value="${item.email}"> 
                      </div>
                       <div class="md-form mb-5">
                         <br> <i class="fa fa-location-arrow prefix grey-text"
-                           aria-hidden="true"></i> <label data-error="¿Ã¹Ù¸¥ ÀÔ·ÂÀÌ ¾Æ´Õ´Ï´Ù."
+                           aria-hidden="true"></i> <label data-error="ì˜¬ë°”ë¥¸ ìž…ë ¥ì´ ì•„ë‹™ë‹ˆë‹¤."
                            data-success="O.K" for="form29">NickName</label><input type="text" id="form29"
                            class="form-control validate" 
                            name=nickname value="${item.nickname}"> 
@@ -146,11 +146,11 @@
                      <div class="modal-footer d-flex justify-content-center">
                      <button id=info-cancel-btn
                         class="btn btn-secondary btn btn-warning btn-rounded mb-4 rgba-purple-strong waves-effect waves-light"  type="button" class="btn close_link" data-dismiss="modal">
-                        Ãë¼Ò<i class="fa fa-paper-plane-o ml-1"></i>
+                        ì·¨ì†Œ<i class="fa fa-paper-plane-o ml-1"></i>
                      </button>
                      <button id=info-change-btn
                         class="btn btn-secondary btn btn-warning btn-rounded mb-4 rgba-purple-strong waves-effect waves-light">
-                        ¼öÁ¤<i class="fa fa-paper-plane-o ml-1"></i>
+                        ìˆ˜ì •<i class="fa fa-paper-plane-o ml-1"></i>
                      </button>
 
                   </div>
@@ -201,7 +201,7 @@
 				<br>
 				<br>
 				
-				<input type="button" value="¼öÁ¤" class="btn btn-toggle btn btn-warning" data-toggle="modal"  data-target="#myModal" style="width:150px; margin-left:35px;">
+				<input type="button" value="ìˆ˜ì •" class="btn btn-toggle btn btn-warning" data-toggle="modal"  data-target="#myModal" style="width:150px; margin-left:35px;">
 				<div class="modal fade" id="myModal">
   				<div class="modal-dialog">
     			<div class="modal-content">
@@ -212,19 +212,19 @@
       				<c:forEach var="item" items="${result}">
       				 <div class="md-form mb-5">
                         <br> <i class="fa fa-user prefix grey-text"></i> <label
-                           data-error="ÇÑ±Û¸¸ ÀÔ·ÂÇØÁÖ¼¼¿ä." data-success="O.K" for="form34">No</label><input
+                           data-error="í•œê¸€ë§Œ ìž…ë ¥í•´ì£¼ì„¸ìš”." data-success="O.K" for="form34">No</label><input
                            type="text" id="form34" class="form-control validate"
                            name="seq" readonly="readonly" value="${item.seq}"> 
                      </div>
        		 		 <div class="md-form mb-5">
                         <br> <i class="fa fa-user prefix grey-text"></i> <label
-                           data-error="ÇÑ±Û¸¸ ÀÔ·ÂÇØÁÖ¼¼¿ä." data-success="O.K" for="form34">Email</label><input
+                           data-error="í•œê¸€ë§Œ ìž…ë ¥í•´ì£¼ì„¸ìš”." data-success="O.K" for="form34">Email</label><input
                            type="text" id="form34" class="form-control validate"
                            name="email" readonly="readonly" value="${item.email}"> 
                      </div>
                       <div class="md-form mb-5">
                         <br> <i class="fa fa-location-arrow prefix grey-text"
-                           aria-hidden="true"></i> <label data-error="¿Ã¹Ù¸¥ ÀÔ·ÂÀÌ ¾Æ´Õ´Ï´Ù."
+                           aria-hidden="true"></i> <label data-error="ì˜¬ë°”ë¥¸ ìž…ë ¥ì´ ì•„ë‹™ë‹ˆë‹¤."
                            data-success="O.K" for="form29">NickName</label><input type="text" id="form29"
                            class="form-control validate" 
                            name=nickname value="${item.nickname}"> 
@@ -233,11 +233,11 @@
                      <div class="modal-footer d-flex justify-content-center">
                      <button id=info-cancel-btn
                         class="btn btn-secondary btn btn-warning btn-rounded mb-4 rgba-purple-strong waves-effect waves-light"  type="button" class="btn close_link" data-dismiss="modal">
-                        Ãë¼Ò<i class="fa fa-paper-plane-o ml-1"></i>
+                        ì·¨ì†Œ<i class="fa fa-paper-plane-o ml-1"></i>
                      </button>
                      <button id=info-change-btn
                         class="btn btn-secondary btn btn-warning btn-rounded mb-4 rgba-purple-strong waves-effect waves-light">
-                        ¼öÁ¤<i class="fa fa-paper-plane-o ml-1"></i>
+                        ìˆ˜ì •<i class="fa fa-paper-plane-o ml-1"></i>
                      </button>
 
                   </div>
