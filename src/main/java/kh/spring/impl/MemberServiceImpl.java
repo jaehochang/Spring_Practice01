@@ -41,6 +41,20 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
+	public List<MemberDTO> update(MemberDTO dto) {
+		int result =  dao.update(dto);
+		
+		if(result > 0) {
+			
+			return dao.selectMypage(dto.getEmail());
+		}else {
+			
+			System.out.println("���� ����");
+			return dao.selectMypage(dto.getEmail());
+		}
+	}
+
+	@Override
 	public int deleteMember(MemberDTO dto) {
 		
 		return dao.deleteMember(dto);

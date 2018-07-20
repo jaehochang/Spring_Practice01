@@ -90,6 +90,30 @@ public class MemberController {
 		
 		
 	}
+	@RequestMapping("/update.do")
+	public ModelAndView toUpdate(MemberDTO dto) {
+		
+		ModelAndView mav = new ModelAndView();
+		List<MemberDTO> result = service.update(dto);
+		
+		if(result.size()>0) {
+			mav.addObject("updateResult", result);
+			mav.setViewName("mypage.jsp");
+			return mav;
+			
+		}else {
+			mav.addObject("updateResult", result);
+			mav.setViewName("mypage.jsp");
+			return mav;
+		}
+		
+		
+		
+				
+		
+		
+		
+	}
 	@RequestMapping("/logout.do")
 	public String tologOut(HttpSession session) {
 		session.invalidate();
