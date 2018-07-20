@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
+<!-- encoding 때문에 글씨 깨지는 거 확인  -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +18,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
-<title>����</title>
+<title>占쏙옙占쏙옙</title>
 <style>
 
 /* CSS Document */
@@ -243,10 +244,10 @@ $(document).ready(function(){
 						aria-expanded="false">Member Management<span class="caret"></span></a>
 
 						<ul class="dropdown-menu">
-							<li><a href="mypage.do">����������</a></li>
-							<li><a href="modifyInfo.jsp">ȸ����������</a></li>
-							<li><a href="memberleave.jsp">ȸ��Ż��</a></li>
-							<li><a href="logout.jsp">�α׾ƿ�</a></li>
+							<li><a href="mypage.do">占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙</a></li>
+							<li><a href="modifyInfo.jsp">회占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙</a></li>
+							<li><a href="memberleave.jsp">회占쏙옙탈占쏙옙</a></li>
+							<li><a href="logout.jsp">占싸그아울옙</a></li>
 						</ul></li>
 				</ul>
 
@@ -261,10 +262,10 @@ $(document).ready(function(){
 			<div class="jumbotron">
 				<div class="container">
 
-					<h1>ȯ���մϴ�</h1>
-					<p>�پ �������� �پ��� ����� ��������</p>
+					<h1>환占쏙옙占쌌니댐옙</h1>
+					<p>占쌕어난 占쏙옙占쏙옙占쏙옙占쏙옙 占쌕억옙占쏙옙 占쏙옙占쏙옙占� 占쏙옙占쏙옙占쏙옙占쏙옙</p>
 					<a class="btn btn-primary btn-pull"
-						href="http://www.iei.or.kr/main/main.kh" role="button">�ٷΰ���</a>
+						href="http://www.iei.or.kr/main/main.kh" role="button">占쌕로곤옙占쏙옙</a>
 				</div>
 
 			</div>
@@ -285,7 +286,7 @@ $(document).ready(function(){
 			
 			<a href="#" class="chat-close">x</a>
 
-			<h4>��</h4>
+			<h4>占쏙옙</h4>
 
 			<span class="chat-message-counter">3</span>
 
@@ -351,13 +352,13 @@ $(document).ready(function(){
 
 			</div> <!-- end chat-history -->
 
-			<p class="chat-feedback">Your partner is typing��</p>
+			<p class="chat-feedback">Your partner is typing占쏙옙</p>
 
 			<form action="#" method="post">
 
 				<fieldset>
 					
-					<input type="text" placeholder="Type your message��" autofocus>
+					<input type="text" placeholder="Type your message占쏙옙" autofocus>
 					<input type="hidden">
 
 				</fieldset>

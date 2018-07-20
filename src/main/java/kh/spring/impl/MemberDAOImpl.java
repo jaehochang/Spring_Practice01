@@ -87,9 +87,9 @@ public class MemberDAOImpl implements MemberDAO{
 	
 	
 	@Override
-	public int deleteMember(int seq) {
-		String sql = "delete member where seq = ? ";
-		return template.update(sql, seq);
+	public int deleteMember(MemberDTO dto) {
+		String sql = "delete member where email = ? and PW = ? ";
+		return template.update(sql, dto.getEmail() ,dto.getPw());
 	}
 	
 	

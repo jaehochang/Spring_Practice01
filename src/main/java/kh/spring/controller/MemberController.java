@@ -69,9 +69,27 @@ public class MemberController {
 		return "redirect:delete.jsp";
 	}
 	
-	@RequestMapping("/delete.do")
+	@RequestMapping("/update.do")
 	public String toUpdate() {
 		return "redirect:update.jsp";
+	}
+	
+	@RequestMapping("/deleteProc.do")
+	public ModelAndView toDeleteProc(MemberDTO dto) {
+		ModelAndView mav = new ModelAndView();
+		int result = service.deleteMember(dto);
+		mav.addObject("result", result);
+		mav.setViewName("deleteProc.jsp");
+		return mav;
+	}
+	
+	@RequestMapping("/updateProc.do")
+	public ModelAndView toUpdateProc(MemberDTO dto ,int seq) {
+		ModelAndView mav = new ModelAndView();
+		int result = service.modifyMember(dto, seq);
+		mav.addObject("result", result);
+		mav.setViewName("updateProc.jsp");
+		return mav;
 	}
 	
 }
