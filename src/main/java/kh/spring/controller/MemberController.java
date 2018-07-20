@@ -39,6 +39,8 @@ public class MemberController {
 		int result = service.insertMember(dto);
 		mav.addObject("result", result);
 		mav.setViewName("signProc.jsp");
+		System.out.println(dto.getPw());
+		
 		return mav;
 	}
 

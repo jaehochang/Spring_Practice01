@@ -28,7 +28,7 @@
 		});
 
 		$("#send").click(function() {
-              if($("#email").val()){
+              /* if($("#email").val()){
             	  $("#email").focus();
             	  alert("이메일을 입력해주세요");
             	  return false;
@@ -44,7 +44,7 @@
             	  $("#nickname").focus();
             	  alert("닉네임을 입력해주세요");
             	  return false;
-              }
+              } */
 			$("#inst").submit();
 		})
 
