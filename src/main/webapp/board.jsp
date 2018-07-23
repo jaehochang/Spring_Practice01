@@ -1,5 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -13,6 +15,14 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
 	integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
 	crossorigin="anonymous">
+
+<!-- Jquery CDN -->
+<script src="https://code.jquery.com/jquery-3.3.1.js"
+	integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	crossorigin="anonymous"></script>
+
+
+
 
 
 <style>
@@ -68,57 +78,25 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<th scope="row">1</th>
-					<td>Mark</td>
-					<td>Otto</td>
-					<td>@mdo</td>
-				</tr>
-				<tr>
-					<th scope="row">2</th>
-					<td>Jacob</td>
-					<td>Thornton</td>
-					<td>@fat</td>
-				</tr>
-				<tr>
-					<th scope="row">3</th>
-					<td colspan="2">Larry the Bird</td>
-					<td>@twitter</td>
-				</tr>
-				<tr>
-					<th scope="row">4</th>
-					<td>Mark</td>
-					<td>Otto</td>
-					<td>@mdo</td>
-				</tr>
-				<tr>
-					<th scope="row">5</th>
-					<td>Jacob</td>
-					<td>Thornton</td>
-					<td>@fat</td>
-				</tr>
-				<tr>
-					<th scope="row">6</th>
-					<td colspan="2">Larry the Bird</td>
-					<td>@twitter</td>
-				</tr>
-				<tr>
-					<th scope="row">7</th>
-					<td>Mark</td>
-					<td>Otto</td>
-					<td>@mdo</td>
-				</tr>
-				<tr>
-					<th scope="row">8</th>
-					<td>Jacob</td>
-					<td>Thornton</td>
-					<td>@fat</td>
-				</tr>
-				<tr>
-					<th scope="row">9</th>
-					<td colspan="2">Larry the Bird</td>
-					<td>@twitter</td>
-				</tr>
+				<c:forEach var='list' items="${boardListData}">
+					<tr>
+						<th scope="row">${list.seq}</th>
+						<td>${list.title}</td>
+						<td>${list.writer}</td>
+						<td>${list.date}</td>
+					</tr>
+				</c:forEach>
+
+				<%-- 					<c:forEach items="${result}" var='resultVal'> --%>
+				<!-- 			<tbody> -->
+				<!-- 				<tr> -->
+				<%-- 					<td>${resultVal.seq}</td> --%>
+				<%-- 					<td>${resultVal.writer}</td> --%>
+				<%-- 					<td>${resultVal.contents}</td> --%>
+				<!-- 			</tbody> -->
+
+
+				<!-- 					�� ���� ������ �� �ٸ� ������ : Ŭ���� hover�Ǿ� �����ų� ?  -->
 			</tbody>
 		</table>
 	</section>
@@ -129,17 +107,42 @@
 
 		<nav aria-label="Page navigation example">
 			<ul class="pagination">
-				<li class="page-item"><a class="page-link" href="#"
-					aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
-						<span class="sr-only">Previous</span>
-				</a></li>
-				<li class="page-item"><a class="page-link" href="#">1</a></li>
-				<li class="page-item"><a class="page-link" href="#">2</a></li>
-				<li class="page-item"><a class="page-link" href="#">3</a></li>
-				<li class="page-item"><a class="page-link" href="#"
-					aria-label="Next"> <span aria-hidden="true">&raquo;</span> <span
-						class="sr-only">Next</span>
-				</a></li>
+
+
+				<!-- ���� ������ ���� 1���� �۴ٸ� ���� ȭ�� ���ֱ� -->
+				<c:choose>
+					<c:when test="${currentPageNum>1}">
+						<li class="page-item"><a class="page-link"
+							href="board.bo?currentPageNum=${currentPageNum-1}"
+							aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+								<span class="sr-only">Previous</span>
+						</a></li>
+					</c:when>
+					<c:when test="${currentPageNum==1}">
+
+					</c:when>
+				</c:choose>
+
+
+				<c:choose>
+					<c:when test="${lastPageNull}">
+
+					</c:when>
+					<c:otherwise>
+
+						<li class="page-item"><a class="page-link"
+							style="font-weight: 600;"
+							href="board.bo?currentPageNum=${currentPageNum}">${currentPageNum}</a></li>
+						<li class="page-item"><a class="page-link"
+							href="board.bo?currentPageNum=${currentPageNum+1}">${currentPageNum+1}</a></li>
+
+						<li class="page-item"><a class="page-link"
+							href="board.bo?currentPageNum=${currentPageNum+1}"
+							aria-label="Next"> <span aria-hidden="true">&raquo;</span> <span
+								class="sr-only">Next</span>
+						</a></li>
+					</c:otherwise>
+				</c:choose>
 			</ul>
 		</nav>
 
@@ -195,12 +198,16 @@
 
 
 	<script>
-$(document).ready(function(){
-	$("#writing").click(function(){
-$(this).attr("href","writing.bo");
-}
-}
-</script>
+		$(document).ready(function() {
+			$("#dummyDataAdd").click(function() {
+				// 				$(this).attr("href", "getDummyData.bo");
+
+				location.href = "getDummyData.bo";
+
+			})
+
+		})
+	</script>
 
 
 	<!-- 	footer -->

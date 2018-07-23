@@ -87,8 +87,8 @@
 					aria-expanded="false">Access<span class="caret"></span></a>
 					<ul class="dropdown-menu">
 
-						<li class="active"><a href="login.jsp">Login</a></li>
-						<li><a href="sign.jsp">SignUp</a></li>
+						<li class="active"><a href="login.do">Login</a></li>
+						<li><a href="sign.do">SignUp</a></li>
 					</ul></li>
 			</ul>
 		</div>

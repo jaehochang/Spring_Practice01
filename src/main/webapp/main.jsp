@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!-- encoding 때문에 글씨 깨지는 거 확인  -->
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +18,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
-<title>占쏙옙占쏙옙</title>
+<title>Main</title>
 <style>
 
 /* CSS Document */
@@ -211,6 +211,51 @@ $(document).ready(function(){
 		$('#live-chat').fadeOut(300);
 
 	});
+	
+	$("#chatText").keypress(function(e){
+		if(e.keyCode==13){
+			var keyword=this.value;
+			$("#chatText").val("");
+			if(keyword.length>0){
+				$.ajax({
+					  url:'sendChat.mo',
+					  data:{chatText:keyword},
+					  success:function(){
+						  console.log("입력성공");
+					  },error:function(){
+						  console.log("에러발생");
+					  }
+						
+						
+					})
+				
+			}
+			e.preventDefault();
+			
+			
+		}
+		
+		
+	})
+	
+         setInterval(function(){
+			
+			$.ajax({
+			    url:"receiveChat.mo",
+			    type:"get",
+			    success:function(response){
+			    	$('.chat-message clearfix').html(response);
+			    }
+				
+				
+			})
+			
+		},500)	
+		
+		
+	
+	
+	
 })
 
 </script>
@@ -232,8 +277,8 @@ $(document).ready(function(){
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="home.mo">Main</a></li>
-					<li><a href="board.bo">Board</a></li>
+					<li class="active" style="font-size:15px;font-weight:bold;"><a href="home.mo">Main</a></li>
+					<li><a href="board.bo" style="font-size:15px;font-weight:bold;">Board</a></li>
 				</ul>
 
 
@@ -241,13 +286,13 @@ $(document).ready(function(){
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false">Member Management<span class="caret"></span></a>
+						aria-expanded="false" style="font-size:15px;font-weight:bold;">Member Management<span class="caret"></span></a>
 
 						<ul class="dropdown-menu">
-							<li><a href="mypage.do">나의페이지</a></li>
-							<li><a href="modifyInfo.jsp">회원수정</a></li>
-							<li><a href="memberleave.jsp">회원탈퇴</a></li>
-							<li><a href="logout.jsp">로그아웃</a></li>
+							<li><a href="mypage.do">Mypage</a></li>
+							<li><a href="modifyInfo.jsp">Modify</a></li>
+							<li><a href="memberleave.jsp">MemberLeave</a></li>
+							<li><a href="logout.do">LogOut</a></li>
 						</ul></li>
 				</ul>
 
@@ -262,10 +307,10 @@ $(document).ready(function(){
 			<div class="jumbotron">
 				<div class="container">
 
-					<h1>?????</h1>
-					<p>글씨겁나 깨짐</p>
+					<h1>4 Developers</h1>
+					<p>We make member,main,board etc through various kinds of functions</p>
 					<a class="btn btn-primary btn-pull"
-						href="http://www.iei.or.kr/main/main.kh" role="button">글씨깨짐 </a>
+						href="http://www.iei.or.kr/main/main.kh" role="button">More</a>
 				</div>
 
 			</div>
@@ -286,9 +331,9 @@ $(document).ready(function(){
 			
 			<a href="#" class="chat-close">x</a>
 
-			<h4>占쏙옙</h4>
+			<h4>hi</h4>
 
-			<span class="chat-message-counter">3</span>
+			<span class="chat-message-counter">5</span>
 
 		</header>
 
@@ -304,27 +349,9 @@ $(document).ready(function(){
 						
 						<span class="chat-time">13:35</span>
 
-						<h5>John Doe</h5>
+						<h5>JaehoJang</h5>
 
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, explicabo quasi ratione odio dolorum harum.</p>
-
-					</div> <!-- end chat-message-content -->
-
-				</div> <!-- end chat-message -->
-
-				<hr>
-
-				<div class="chat-message clearfix">
-					
-					<img src="http://gravatar.com/avatar/2c0ad52fc5943b78d6abe069cc08f320?s=32" alt="" width="32" height="32">
-
-					<div class="chat-message-content clearfix">
-						
-						<span class="chat-time">13:37</span>
-
-						<h5>Marco Biedermann</h5>
-
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, nulla accusamus magni vel debitis numquam qui tempora rem voluptatem delectus!</p>
+						<p>u should finish this web chatting function until today!!!</p>
 
 					</div> <!-- end chat-message-content -->
 
@@ -332,36 +359,17 @@ $(document).ready(function(){
 
 				<hr>
 
-				<div class="chat-message clearfix">
-					
-					<img src="http://lorempixum.com/32/32/people" alt="" width="32" height="32">
-
-					<div class="chat-message-content clearfix">
-						
-						<span class="chat-time">13:38</span>
-
-						<h5>John Doe</h5>
-
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-
-					</div> <!-- end chat-message-content -->
-
-				</div> <!-- end chat-message -->
-
-				<hr>
-
+				
 			</div> <!-- end chat-history -->
 
-			<p class="chat-feedback">Your partner is typing占쏙옙</p>
+			<p class="chat-feedback">Your partner is typing</p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+			<form onsubmit="return submitchat();">
 
-			<form action="#" method="post">
 
-				<fieldset>
-					
-					<input type="text" placeholder="Type your message占쏙옙" autofocus>
+					<input type="text" id="chatText" autofocus>
 					<input type="hidden">
 
-				</fieldset>
 
 			</form>
 
@@ -369,7 +377,7 @@ $(document).ready(function(){
 
 	</div> <!-- end live-chat -->
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+	
 	
 
 

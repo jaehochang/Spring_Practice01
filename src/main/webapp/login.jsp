@@ -6,14 +6,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700">
 
 <!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>Login</title>
 
 <style>
@@ -21,7 +25,6 @@
 /* CSS Document */
 
 /* ---------- GENERAL ---------- */
-
 body {
 	background: #e9e9e9;
 	color: #9a9a9a;
@@ -29,7 +32,9 @@ body {
 	margin: 0;
 }
 
-a { text-decoration: none; }
+a {
+	text-decoration: none;
+}
 
 fieldset {
 	border: 0;
@@ -44,41 +49,47 @@ h4, h5 {
 
 hr {
 	background: #e9e9e9;
-    border: 0;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    height: 1px;
-    margin: 0;
-    min-height: 1px;
+	border: 0;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	height: 1px;
+	margin: 0;
+	min-height: 1px;
 }
 
 img {
-    border: 0;
-    display: block;
-    height: auto;
-    max-width: 100%;
+	border: 0;
+	display: block;
+	height: auto;
+	max-width: 100%;
 }
 
 input {
 	border: 0;
 	color: inherit;
-    font-family: inherit;
-    font-size: 100%;
-    line-height: normal;
-    margin: 0;
+	font-family: inherit;
+	font-size: 100%;
+	line-height: normal;
+	margin: 0;
 }
 
-p { margin: 0; }
+p {
+	margin: 0;
+}
 
-.clearfix { *zoom: 1; } /* For IE 6/7 */
+.clearfix {
+	*zoom: 1;
+} /* For IE 6/7 */
 .clearfix:before, .clearfix:after {
-    content: "";
-    display: table;
+	content: "";
+	display: table;
 }
-.clearfix:after { clear: both; }
+
+.clearfix:after {
+	clear: both;
+}
 
 /* ---------- LIVE-CHAT ---------- */
-
 #live-chat {
 	bottom: 0;
 	font-size: 12px;
@@ -185,30 +196,27 @@ p { margin: 0; }
 }
 
 .chat-feedback {
-	font-style: italic;	
+	font-style: italic;
 	margin: 0 0 0 80px;
 }
-
 </style>
 
 <script>
+	$(document).ready(function() {
+		$('#live-chat header').on('click', function() {
 
-$(document).ready(function(){
-	$('#live-chat header').on('click', function() {
+			$('.chat').slideToggle(300, 'swing');
+			$('.chat-message-counter').fadeToggle(300, 'swing');
 
-		$('.chat').slideToggle(300, 'swing');
-		$('.chat-message-counter').fadeToggle(300, 'swing');
+		});
 
-	});
+		$('.chat-close').on('click', function(e) {
 
-	$('.chat-close').on('click', function(e) {
+			e.preventDefault();
+			$('#live-chat').fadeOut(300);
 
-		e.preventDefault();
-		$('#live-chat').fadeOut(300);
-
-	});
-})
-
+		});
+	})
 </script>
 </head>
 <body>
@@ -226,18 +234,18 @@ $(document).ready(function(){
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="main.jsp">Main</a></li>
-				<li><a href="board.jsp">Board</a></li>
+				<li><a href="main.jsp" style="font-size:15px;font-weight:bold;">Main</a></li>
+				<li><a href="board.jsp" style="font-size:15px;font-weight:bold;">Board</a></li>
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-haspopup="true"
-					aria-expanded="false">Access<span class="caret"></span></a>
+					aria-expanded="false" style="font-size:15px;font-weight:bold;">Access<span class="caret"></span></a>
 					<ul class="dropdown-menu">
 
-						<li class="active"><a href="login.jsp">Login</a></li>
-						<li><a href="sign.jsp">SignUp</a></li>
+						<li class="active" ><a href="login.jsp">Login</a></li>
+						<li><a href="sign.jsp" >SignUp</a></li>
 					</ul></li>
 			</ul>
 		</div>
@@ -268,101 +276,117 @@ $(document).ready(function(){
 
 
 
-<div id="live-chat">
-		
+	<div id="live-chat">
+
 		<header class="clearfix">
-			
+
 			<a href="#" class="chat-close">x</a>
 
-			<h4>John Doe</h4>
+			<h4>Hello</h4>
 
-			<span class="chat-message-counter">3</span>
+			<span class="chat-message-counter">599</span>
 
 		</header>
 
 		<div class="chat">
-			
+
 			<div class="chat-history">
-				
+
 				<div class="chat-message clearfix">
-					
-					<img src="http://lorempixum.com/32/32/people" alt="" width="32" height="32">
+
+					<img src="http://lorempixum.com/32/32/people" alt="" width="32"
+						height="32">
 
 					<div class="chat-message-content clearfix">
-						
+
 						<span class="chat-time">13:35</span>
 
-						<h5>John Doe</h5>
+						<h5>Jieun Son</h5>
 
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, explicabo quasi ratione odio dolorum harum.</p>
+						<p>I wanted to make chat Bot using kakaoAPI BUT I couldn't analyze how to make 
+						sorry it will take a time to make so please wait for me for final Project 
+						i will make awesome function</p>
 
-					</div> <!-- end chat-message-content -->
+					</div>
+					<!-- end chat-message-content -->
 
-				</div> <!-- end chat-message -->
+				</div>
+				<!-- end chat-message -->
 
 				<hr>
 
 				<div class="chat-message clearfix">
-					
-					<img src="http://gravatar.com/avatar/2c0ad52fc5943b78d6abe069cc08f320?s=32" alt="" width="32" height="32">
+
+					<img
+						src="http://gravatar.com/avatar/2c0ad52fc5943b78d6abe069cc08f320?s=32"
+						alt="" width="32" height="32">
 
 					<div class="chat-message-content clearfix">
-						
+
 						<span class="chat-time">13:37</span>
 
-						<h5>Marco Biedermann</h5>
+						<h5>Jaeho Jang</h5>
 
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, nulla accusamus magni vel debitis numquam qui tempora rem voluptatem delectus!</p>
+						<p>okie i will wait Jieun</p>
 
-					</div> <!-- end chat-message-content -->
+					</div>
+					<!-- end chat-message-content -->
 
-				</div> <!-- end chat-message -->
+				</div>
+				<!-- end chat-message -->
 
 				<hr>
 
 				<div class="chat-message clearfix">
-					
-					<img src="http://lorempixum.com/32/32/people" alt="" width="32" height="32">
+
+					<img src="http://lorempixum.com/32/32/people" alt="" width="32"
+						height="32">
 
 					<div class="chat-message-content clearfix">
-						
+
 						<span class="chat-time">13:38</span>
 
-						<h5>John Doe</h5>
+						<h5>ChanyanKim</h5>
 
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+						<p>NoJam Jam is in refrig</p>
 
-					</div> <!-- end chat-message-content -->
+					</div>
+					<!-- end chat-message-content -->
 
-				</div> <!-- end chat-message -->
+				</div>
+				<!-- end chat-message -->
 
 				<hr>
 
-			</div> <!-- end chat-history -->
+			</div>
+			<!-- end chat-history -->
 
-			<p class="chat-feedback">Your partner is typing¡¦</p>
+			<p class="chat-feedback">Your partner is typingï¿½ï¿½</p>
 
 			<form action="#" method="post">
 
 				<fieldset>
-					
-					<input type="text" placeholder="Type your message¡¦" autofocus>
+
+					<input type="text" placeholder="Type your messageï¿½ï¿½" autofocus>
 					<input type="hidden">
 
 				</fieldset>
 
 			</form>
 
-		</div> <!-- end chat -->
+		</div>
+		<!-- end chat -->
 
-	</div> <!-- end live-chat -->
+	</div>
+	<!-- end live-chat -->
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-	
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 
 
 
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src= "js/bootstrap.js"></script>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="js/bootstrap.js"></script>
 </body>
 </html>

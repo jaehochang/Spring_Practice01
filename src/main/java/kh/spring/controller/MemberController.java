@@ -15,7 +15,7 @@ public class MemberController {
 
 	@Autowired
 	private MemberService service;
-	// 순서는 맞춥시다 
+	// �닚�꽌�뒗 留욎땅�떆�떎 
 
 	@RequestMapping("/index.do")
 	public String toIndex() {
@@ -35,6 +35,8 @@ public class MemberController {
 	@RequestMapping("/signProc.do")
 	public ModelAndView signProc(MemberDTO dto) {
 		ModelAndView mav = new ModelAndView();
+		
+		
 		int result = service.insertMember(dto);
 		mav.addObject("result", result);
 		mav.setViewName("signProc.jsp");
@@ -91,6 +93,14 @@ public class MemberController {
 		mav.setViewName("updateProc.jsp");
 		return mav;
 	}
+	
+	@RequestMapping("/logout.do")
+	public String tologOut(HttpSession session) {
+		session.invalidate();
+		return "redirect:login.jsp";
+	}
+	
+	
 	
 	@RequestMapping("/mypage.do")
 	public String toMypage() {
