@@ -35,6 +35,21 @@
 		
 	</bean>
 	
+	
+	<!-- mybatis 전용 -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="mapperLocations" value="classpath:/mapper/**/*mapper.xml"/>
+		<!-- mapper 존재 위치 value에 집어넣는다, classpath 라고 적으면 classes 아래를 칭하게 됨 -->
+		<!-- 하위폴더 여러개는 ** 하위폴더 바로아래 모든것 *  -->
+		<property name="configLocation" value="classpath:/mybatis-config.xml"/>
+	</bean>
+	
+	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSession"/>
+	</bean>
+	
+	
 	<tx:annotation-driven/>  
 	<aop:aspectj-autoproxy/>
 	<context:component-scan base-package="kh.spring"/>

@@ -8,7 +8,7 @@ import kh.spring.dto.MemberDTO;
 public interface MemberService {
 	public int insertMember(MemberDTO dto);
 	public List<MemberDTO> selectMember();
-	public Boolean loginCheck(MemberDTO dto);
+	public Boolean loginCheck(String email,String pw);
 	public List<MemberDTO> selectMypage(String email);
 	public List<MemberDTO> update(MemberDTO dto);
 	public int deleteMember(MemberDTO dto);

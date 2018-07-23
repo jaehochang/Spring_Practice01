@@ -51,14 +51,14 @@ public class MemberController {
 	}
 
 	@RequestMapping("/loginProc.do")
-	public ModelAndView toLoginProc(MemberDTO dto, HttpSession session) {
+	public Object toLoginProc(String email, String pw, HttpSession session) {
 		ModelAndView mav = new ModelAndView();
-
-		Boolean result = service.loginCheck(dto);
-
+		System.out.println(email +" : "+ pw);
+		boolean result = service.loginCheck(email, pw);
+		System.out.println(result);
 		if (result == true) {
-			session.setAttribute("userID", dto.getEmail());
-			System.out.println(session.getAttribute("userID") + "loginproc");
+			session.setAttribute("userID", email);
+			System.out.println(session.getAttribute("userID") + ":" + pw + ":" +"loginproc");
 			mav.setViewName("main.jsp");
 			return mav;
 		} else {

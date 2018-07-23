@@ -9,7 +9,7 @@ public interface MemberDAO {
 
 	public List<MemberDTO> selectMember();
 
-	public Boolean loginCheck(MemberDTO dto);
+	public Boolean loginCheck(String email,String pw);
 	public List<MemberDTO> selectMypage(String email);
 	public int update(MemberDTO dto);
 	 

@@ -30,8 +30,8 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public Boolean loginCheck(MemberDTO dto) {
-		return dao.loginCheck(dto);
+	public Boolean loginCheck(String email, String pw) {
+		return dao.loginCheck(email,pw);
 	}
 
 	@Override
