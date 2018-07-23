@@ -20,7 +20,7 @@ public class BoardController {
 	public BoardService bService;
 
 	@RequestMapping("/home.bo")
-	public String toHome() {
+	public String toIndex() {
 
 		return "redirect:index.jsp";
 	}
